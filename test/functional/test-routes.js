@@ -1,6 +1,6 @@
 const chai = require('chai');
 const request = require('supertest');
-
+const appVersion = require('../../package').version;
 const expect = chai.expect;
 
 const server = require('../../server/server');
@@ -28,14 +28,15 @@ describe('GET /health', () => {
       .expect('Content-Type', 'application/json; charset=utf-8')
       .expect(200, {
         status: 'UP',
+        appVersion: appVersion
       });
   });
 });
 
-describe('GET /swagger/api-docs', () => {
+describe('GET /api/v1/api-docs', () => {
   it('responds with swagger', () => {
     return request(server)
-      .get('/swagger/api-docs/')
+      .get('/api/v1/api-docs/')
       .expect('Content-Type', 'text/html; charset=utf-8')
       .expect(200)
       .then(response => {

@@ -1,6 +1,7 @@
 const chai = require('chai');
 const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
+const appVersion = require('../../../package').version;
 
 const healthController = require(
   '../../../server/controllers/health-controller',
@@ -31,6 +32,7 @@ describe('Test health controller', () => {
     healthController.getHealth(mockReq, res);
     expect(res.json).to.have.been.calledOnceWith({
       status: 'UP',
+      appVersion: appVersion
     });
   });
 });
