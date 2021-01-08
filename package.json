@@ -1,0 +1,63 @@
+{
+  "name": "sms-service",
+  "version": "1.0.6",
+  "description": "Microservice for sending SMS messages using Twilio",
+  "private": true,
+  "engines": {
+    "node": "^12.0.0"
+  },
+  "author": {
+    "name": "Dave Wakeman",
+    "email": "dwakeman@us.ibm.com"
+  },
+  "bugs": "https://github.com/dwakeman/sms-service/issues",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dwakeman/sms-service.git"
+  },
+  "scripts": {
+    "dev": "nodemon server/server.js",
+    "start": "node server/server.js",
+    "check-coverage": "nyc report --check-coverage --lines 100",
+    "lint": "eslint --ignore-path .gitignore --ignore-path .eslintignore .",
+    "fix": "eslint --ignore-path .gitignore . --fix",
+    "test": "nyc mocha test --recursive --exit"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 50,
+    "exclude": [
+      "test"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ]
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "ibm-cloud-env": "^0",
+    "log4js": "^6.3.0",
+    "twilio": "^3.0.0",
+    "yamljs": "^0.3.0",
+    "swagger-ui-express": "^4.1.5"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.15.0",
+    "eslint-config-strongloop": "^2.1.0",
+    "husky": "^4.3.5",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.6",
+    "nyc": "^15.1.0",
+    "sinon": "^9.2.1",
+    "sinon-chai": "^3.5.0",
+    "supertest": "^6.0.1"
+  }
+}

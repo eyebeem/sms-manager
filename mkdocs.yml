@@ -1,0 +1,13 @@
+site_name: Help - SMS Service
+site_dir: public/docs
+repo_url: https://github.com/dwakeman/sms-service
+edit_uri: ''
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - Deployment: deployment.md
+  - TLS: tls.md
+
+theme: material
+markdown_extensions:
+  - admonition

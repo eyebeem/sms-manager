@@ -1,3 +1,13 @@
+# from the sms-service repo
+site/
+server/localdev-config.json
+server/localdev-config.json
+vcap-local.js
+credentials.json
+localdev-config.json
+
+
+
 # Logs
 logs
 *.log
@@ -24,6 +34,7 @@ coverage
 
 # nyc test coverage
 .nyc_output
+#.nyc*
 
 # Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
