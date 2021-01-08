@@ -32,7 +32,7 @@ describe('Test health controller', () => {
     healthController.getHealth(mockReq, res);
     expect(res.json).to.have.been.calledOnceWith({
       status: 'UP',
-      appVersion: appVersion
+      appVersion: appVersion,
     });
   });
 });
